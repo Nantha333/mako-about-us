@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>About Us | Mako IT Lab</title>
+<meta name="description" content="Mako IT Lab builds software, data, cloud and AI systems for enterprises across India, the US, the UK and the Middle East.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1F1D47; --ink-2:#45436B; --muted:#5B5980;
+  --blue:#2F5BEA; --blue-deep:#1F45C9; --eyebrow:#524D96;
+  --lav:#F6F5FE; --lav-2:#ECEEFD; --peri:#A9B6F5; --line:#E2E3F3; --white:#fff;
+  --footer:#0E0F1C; --footer-card:#141627; --footer-text:#A9AECB; --footer-link:#8FA3EA;
+  --font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --wrap:1240px; --dur:6s;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font);color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.sr-only:focus{position:fixed;top:12px;left:12px;width:auto;height:auto;clip:auto;z-index:100;background:#fff;padding:10px 16px;border-radius:4px}
+
+/* Shared type */
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.82rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--eyebrow);margin:0 0 18px}
+.eyebrow::before{content:"›";font-size:1.2em;letter-spacing:0}
+.eyebrow::after{content:"‹";font-size:1.2em;letter-spacing:0}
+h1,h2,h3{font-weight:500;letter-spacing:-.02em;line-height:1.1;margin:0}
+h2{font-size:clamp(2rem,4vw,3.2rem)}
+.accent{color:var(--blue)}
+.lead{font-size:1.1rem;color:var(--ink-2);max-width:60ch;margin:18px 0 0}
+section{padding:96px 0}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 26px;font:600 1rem var(--font);color:var(--ink);background:var(--white);border:1px solid #D5D8F4;border-radius:4px;text-decoration:none;box-shadow:0 14px 22px -16px rgba(47,63,160,.55);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 18px 26px -16px rgba(47,63,160,.65)}
+.btn-blue{background:var(--blue);color:#fff;border-color:var(--blue)}
+.btn-blue:hover{background:var(--blue-deep)}
+.link{font-weight:600;color:var(--blue);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo img{display:block;height:36px;width:auto}
+.logo{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:1.45rem;letter-spacing:.02em;color:var(--ink)}
+.nav ul{display:flex;gap:32px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;font-weight:500;color:var(--ink-2);font-size:.96rem}
+.nav ul a:hover,.nav ul a[aria-current]{color:var(--blue)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:4px;width:44px;height:44px;cursor:pointer;color:var(--ink)}
+@media (max-width:900px){
+  .nav ul{display:none;position:absolute;top:72px;left:0;right:0;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:8px 24px 16px}
+  .nav ul.open{display:flex}
+  .nav ul a{display:block;padding:12px 0}
+  .menu-btn{display:inline-grid;place-items:center}
+  .nav .btn{display:none}
+}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;padding:110px 0 120px;background:
+  radial-gradient(40% 55% at 12% 85%,#7F93F0 0%,transparent 70%),
+  radial-gradient(35% 60% at 92% 20%,#B8C1F6 0%,transparent 70%),
+  radial-gradient(50% 60% at 50% 0%,#E4E8FD 0%,transparent 70%),
+  linear-gradient(180deg,#C9D0F8 0%,#E9ECFD 100%)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,5.6vw,4.6rem)}
+.hero h1 span{display:block}
+.hero .lead{color:var(--ink-2)}
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin-top:36px}
+.fde-card{background:rgba(255,255,255,.88);border:1px solid rgba(255,255,255,.9);border-radius:8px;padding:28px;box-shadow:0 30px 60px -30px rgba(40,50,140,.45)}
+.fde-top{display:flex;align-items:center;gap:14px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#8FA3F6);display:grid;place-items:center;color:#fff;font-weight:700}
+.fde-top strong{display:block;font-size:1.05rem}
+.fde-top small{color:var(--muted);font-size:.85rem}
+.status{margin-left:auto;font-size:.75rem;font-weight:600;color:#17734A;background:#E3F6EC;padding:4px 10px;border-radius:20px}
+.checks{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:12px}
+.checks li{display:flex;gap:12px;align-items:flex-start;font-size:.96rem}
+.tick{flex:none;width:22px;height:22px;border-radius:4px;background:var(--blue);display:grid;place-items:center;margin-top:1px}
+.fde-foot{margin-top:20px;padding-top:16px;border-top:1px dashed var(--line);font-size:.85rem;color:var(--muted)}
+.fde-foot b{color:var(--ink)}
+
+/* Compare */
+.compare{background:var(--lav)}
+.center{text-align:center}
+.center .lead{margin-left:auto;margin-right:auto}
+.cmp-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:56px}
+.cmp{background:#fff;border:1px solid var(--line);border-radius:8px;padding:36px}
+.cmp h3{font-size:1.4rem;margin-bottom:22px}
+.cmp ul{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.cmp li{display:flex;gap:14px;align-items:flex-start}
+.x{flex:none;width:22px;height:22px;border-radius:4px;background:#ECECF3;display:grid;place-items:center;margin-top:2px}
+.cmp.mako{border:2px solid var(--blue);box-shadow:0 30px 50px -34px rgba(47,91,234,.6)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;border-top:1px solid var(--line)}
+.stat{padding:28px 8px 0}
+.stat b{display:block;font-size:2.4rem;font-weight:600;letter-spacing:-.03em;color:var(--ink)}
+.stat span{color:var(--muted);font-size:.95rem}
+
+/* Tabs: how it works */
+.tabs-wrap{display:grid;grid-template-columns:300px 1fr;gap:40px;margin-top:56px}
+.spy{position:sticky;top:110px;align-self:start}
+.spy ul{list-style:none;margin:0;padding:0}
+.spy-link{display:flex;align-items:center;gap:18px;padding:30px 22px 28px;position:relative;text-decoration:none;font-size:1.05rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:#9896B5;border-bottom:1.5px solid #D6D6E2;transition:color .3s}
+.spy-link::before{content:"";flex:none;width:10px;height:10px;background:#D0D0DC;transition:background .3s}
+.spy-link::after{content:"";position:absolute;left:0;bottom:-1.5px;height:2px;width:0;background:var(--blue);transition:width .5s ease}
+.spy-link:hover{color:#5E5C82}
+.spy-link.active{color:var(--ink)}
+.spy-link.active::before{background:var(--blue)}
+.spy-link.active::after{width:100%}
+.bar{position:absolute;left:0;height:2px;width:0;background:var(--blue)}
+@keyframes fill{from{width:0}to{width:100%}}
+.steps{display:grid;gap:32px}
+.step-card{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#FAFAFE;scroll-margin-top:110px}
+.panel-text{padding:44px 40px;display:flex;flex-direction:column}
+.panel-text h3{font-size:clamp(1.6rem,2.6vw,2.2rem)}
+.panel-text p{color:var(--ink-2);font-size:1.05rem;margin:16px 0 0}
+.panel-text .pill{margin-top:auto;align-self:flex-start;display:inline-flex;gap:8px;align-items:center;padding:10px 16px;border:1px solid var(--line);border-radius:6px;background:#fff;font-weight:600;color:var(--blue);font-size:.9rem}
+.panel-visual{background:radial-gradient(70% 70% at 70% 30%,#D9DEFB,transparent),linear-gradient(160deg,#EEF0FE,#C9D1F8);padding:36px;display:grid;place-items:center;min-height:380px}
+.mock{width:100%;max-width:380px;background:#fff;border-radius:10px;box-shadow:0 24px 50px -28px rgba(40,50,140,.55);padding:20px;font-size:.85rem}
+.mock-h{display:flex;justify-content:space-between;align-items:center;font-weight:700;margin-bottom:14px}
+.mock-h small{font-weight:500;color:var(--muted)}
+.row{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:6px;margin-top:8px}
+.row .grow{flex:1}
+.tag{font-size:.72rem;font-weight:700;padding:3px 8px;border-radius:20px}
+.t-hi{background:#E6ECFF;color:var(--blue-deep)}
+.t-md{background:#F1EFFB;color:#5A4FA3}
+.t-ok{background:#E3F6EC;color:#17734A}
+.prog{height:6px;border-radius:6px;background:var(--lav-2);overflow:hidden;width:90px}
+.prog i{display:block;height:100%;background:var(--blue)}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--blue);flex:none}
+.dot.off{background:#CBCDE6}
+.bars{display:flex;align-items:flex-end;gap:10px;height:120px;margin-top:10px;padding:0 6px;border-bottom:1px solid var(--line)}
+.bars i{flex:1;background:linear-gradient(180deg,var(--blue),#8FA3F6);border-radius:4px 4px 0 0}
+.note{margin-top:10px;color:var(--muted);font-size:.75rem}
+
+/* Matrix accordion */
+.matrix{background:var(--lav)}
+.mx-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:56px;align-items:start}
+.acc-item{border-top:1px solid var(--line);position:relative}
+.acc-item:last-child{border-bottom:1px solid var(--line)}
+.acc-btn{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:flex;justify-content:space-between;align-items:center;padding:24px 4px}
+.acc-btn h3{font-size:clamp(1.4rem,2.4vw,1.9rem);color:#6E6C93;transition:color .3s}
+.acc-btn[aria-expanded="true"] h3{color:var(--blue)}
+.acc-btn:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.acc-btn svg{flex:none;transition:transform .3s}
+.acc-btn[aria-expanded="true"] svg{transform:rotate(90deg)}
+.acc-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s ease}
+.acc-body > div{overflow:hidden}
+.acc-item.open .acc-body{grid-template-rows:1fr}
+.acc-body p{margin:0;padding:0 4px 24px;color:var(--ink-2);font-size:1.05rem}
+.acc-body b{color:var(--ink)}
+.acc-item .bar{bottom:auto;top:-1px}
+.acc-item.open .bar{animation:fill var(--dur) linear forwards}
+.mx-stage{position:sticky;top:110px;display:grid;border-radius:12px;overflow:hidden;background:linear-gradient(150deg,#A9B4F6 0%,#5E78EE 55%,#3150E2 100%);padding:40px;min-height:440px}
+.mx-card{grid-area:1/1;align-self:center;background:#fff;border-radius:10px;padding:30px;box-shadow:0 30px 60px -30px rgba(10,20,90,.6);opacity:0;visibility:hidden;transform:translateY(20px);transition:opacity .45s,transform .45s,visibility 0s .45s}
+.mx-card.active{opacity:1;visibility:visible;transform:none;transition:opacity .45s,transform .45s}
+.mx-card h4{margin:0;font-size:1.5rem;font-weight:600}
+.mx-card .sub{margin:6px 0 20px;color:var(--muted)}
+.mx-card dt{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--eyebrow);margin-top:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0;padding:0;list-style:none}
+.chips li{background:var(--lav-2);color:var(--ink);border-radius:20px;padding:6px 12px;font-size:.85rem;font-weight:500}
+.mx-cta{margin-top:36px}
+
+/* Engagement */
+.eng-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.eng{border:1px solid var(--line);border-radius:8px;padding:32px;background:#fff;display:flex;flex-direction:column}
+.eng h3{font-size:1.35rem;margin:18px 0 12px}
+.eng p{margin:0;color:var(--ink-2)}
+.eng .best{margin-top:22px;padding-top:16px;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)}
+.eng .best b{color:var(--ink)}
+.icon{width:44px;height:44px}
+
+/* Closing CTA */
+.closing{text-align:center;padding:130px 0;background:
+  radial-gradient(35% 50% at 20% 80%,#6D84EE 0%,transparent 70%),
+  radial-gradient(30% 50% at 95% 95%,#4A66E8 0%,transparent 70%),
+  radial-gradient(40% 60% at 50% 10%,#E1E6FD 0%,transparent 70%),
+  linear-gradient(180deg,#B9C3F6,#A5B2F4)}
+.closing h2{font-size:clamp(2.4rem,5vw,4.2rem)}
+.closing h2 span{display:block;color:#fff}
+.closing .lead{color:var(--ink);margin:24px auto 0}
+.closing .cta-row{justify-content:center}
+.closing .small{margin:36px 0 0;font-size:1.05rem;color:var(--ink)}
+
+/* Footer */
+.footer{background:var(--footer);color:var(--footer-text);padding:72px 0 calc(28px + env(safe-area-inset-bottom,0px));font-size:.9rem}
+.footer a{text-decoration:none;color:var(--footer-link)}
+.footer a:hover{color:#fff}
+.f-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:28px}
+.f-top .logo{color:#fff}
+.f-tag{max-width:58ch;margin:18px 0 0;color:#C3C7E2}
+.social{display:flex;gap:32px;margin-top:28px;padding-top:24px;border-top:1px solid #23263C}
+.social a{color:#C3C7E2;display:inline-flex;gap:8px;align-items:center;font-size:.85rem}
+.badges{text-align:right}
+.badges .b{display:inline-grid;place-items:center;width:58px;height:58px;margin-left:12px;border-radius:8px;border:1px solid #2B2F4B;font-size:.6rem;font-weight:700;color:#C3C7E2;text-align:center;line-height:1.2}
+.badges p{margin:12px 0 0;color:var(--footer-link)}
+.offices{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:32px 0 56px}
+.office{background:var(--footer-card);border-radius:10px;padding:26px}
+.office h3{color:#fff;font-size:1.05rem;font-weight:500;margin:14px 0 12px;letter-spacing:0}
+.office p{margin:0;line-height:1.7}
+.f-links{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px}
+.f-links h3{color:#fff;font-size:1.05rem;font-weight:500;margin:0 0 20px;letter-spacing:0}
+.f-links h4{color:#E3E5F3;font-weight:500;font-size:.95rem;margin:4px 0 12px}
+.f-links ul{list-style:none;margin:0 0 20px;padding:0;display:grid;gap:12px}
+.f-links .indent{padding-left:16px}
+.f-links .btn{min-height:44px;padding:10px 18px;font-size:.9rem;margin-top:4px}
+.f-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #23263C;color:#D6D8EA}
+.f-bottom ul{display:flex;flex-wrap:wrap;gap:0;list-style:none;margin:0;padding:0}
+.f-bottom li+li::before{content:"|";margin:0 16px;color:#4A4E6A}
+
+/* Responsive */
+@media (max-width:1024px){
+  .hero-grid,.mx-grid{grid-template-columns:1fr}
+  .tabs-wrap{grid-template-columns:1fr}
+  .spy{display:none}
+  .mx-stage{position:relative;top:0;min-height:380px}
+  .f-links{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  section{padding:72px 0}
+  .cmp-grid,.eng-grid,.offices{grid-template-columns:1fr}
+  .step-card{grid-template-columns:1fr}
+  .panel-visual{min-height:300px;padding:24px}
+  .panel-text{padding:32px 24px}
+  .stats{grid-template-columns:1fr 1fr}
+  .badges{text-align:left}
+  .badges .b{margin:0 12px 0 0}
+  .f-links{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:.01ms!important;animation:none!important;scroll-behavior:auto!important}
+  .acc-item.open .bar{width:100%}
+}
+/* Statement */
+.statement{padding:110px 0;background:#fff}
+.statement p.big{font-size:clamp(1.7rem,3.4vw,2.8rem);font-weight:500;letter-spacing:-.02em;line-height:1.25;margin:0;max-width:24ch}
+.statement p.big span{display:block;color:#77759C}
+.statement p.big strong{display:block;font-weight:500;color:var(--blue)}
+.stmt-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:end}
+.stmt-grid .stats{grid-template-columns:1fr 1fr;margin-top:0;border-top:0;gap:0 24px}
+.stmt-grid .stat{border-top:1px solid var(--line);padding:22px 0}
+
+/* Comparison table */
+.tbl-wrap{overflow-x:auto;margin-top:56px;border-radius:10px;border:1px solid var(--line);background:#fff}
+table{width:100%;min-width:720px;border-collapse:collapse;font-size:.98rem}
+th,td{text-align:left;padding:20px 24px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child th,tr:last-child td{border-bottom:0}
+thead th{font-size:1.05rem;font-weight:600;background:#FAFAFE}
+tbody th{font-weight:600;color:var(--ink);width:22%}
+td{color:var(--ink-2)}
+.col-fde{background:#EEF2FF;color:var(--ink)}
+thead .col-fde{background:var(--blue);color:#fff}
+.col-fde b{color:var(--blue-deep)}
+
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:22px 4px;font-size:1.15rem;font-weight:600}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.6rem;font-weight:400;color:var(--blue);transition:transform .3s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:0;padding:0 4px 22px;color:var(--ink-2);max-width:62ch}
+@media (max-width:900px){.stmt-grid,.faq-grid{grid-template-columns:1fr}}
+/* ===== About page ===== */
+.about-hero{text-align:center;padding:110px 0 70px;background:
+  radial-gradient(40% 55% at 10% 90%,#8597F1 0%,transparent 70%),
+  radial-gradient(35% 60% at 92% 15%,#B8C1F6 0%,transparent 70%),
+  linear-gradient(180deg,#CCD3F9 0%,#EEF0FE 100%)}
+.about-hero h1{font-size:clamp(2.6rem,5.6vw,4.6rem)}
+.about-hero h1 span{display:block}
+.about-hero .lead{margin:22px auto 0}
+.about-hero .cta-row{justify-content:center}
+
+/* Moving photo strip */
+.marquee{overflow:hidden;padding:56px 0;background:linear-gradient(180deg,#EEF0FE,#fff);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.track{display:flex;gap:20px;width:max-content;animation:scroll 50s linear infinite}
+.track.rev{animation-direction:reverse;margin-top:20px}
+.marquee:hover .track,.marquee:focus-within .track{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.ph{flex:none;height:240px;border-radius:10px;overflow:hidden;position:relative;margin:0;
+  background:linear-gradient(135deg,#C9D1F8,#8FA3F0)}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph figcaption{position:absolute;left:14px;bottom:12px;font-size:.8rem;font-weight:600;color:#fff;background:rgba(20,22,60,.55);padding:4px 10px;border-radius:20px}
+.ph.w1{width:340px}.ph.w2{width:260px}.ph.w3{width:420px}
+.ph.c2{background:linear-gradient(135deg,#2F5BEA,#8FA3F0)}
+.ph.c3{background:linear-gradient(135deg,#1F1D47,#4A66E8)}
+.ph.c4{background:linear-gradient(135deg,#E2E6FD,#A9B6F5)}
+
+/* Story */
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.story-grid p{color:var(--ink-2);font-size:1.08rem;margin:0 0 18px}
+.story-grid p.hl{font-size:1.35rem;color:var(--ink);font-weight:500;line-height:1.45}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:72px;border-top:1px solid var(--line)}
+.fact{padding:28px 8px 0}
+.fact b{display:block;font-size:2.6rem;font-weight:600;letter-spacing:-.03em}
+.fact span{color:var(--muted)}
+
+/* Beliefs */
+.beliefs{background:var(--lav)}
+.b-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px}
+.belief{background:#fff;border:1px solid var(--line);border-radius:8px;padding:30px;transition:transform .3s,box-shadow .3s}
+.belief:hover{transform:translateY(-4px);box-shadow:0 24px 40px -28px rgba(47,63,160,.55)}
+.belief .n{font-size:.8rem;font-weight:700;letter-spacing:.14em;color:var(--eyebrow)}
+.belief h3{font-size:1.3rem;margin:14px 0 10px}
+.belief p{margin:0;color:var(--ink-2)}
+
+/* What we do + industries */
+.do-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;margin-top:56px}
+.do-list{list-style:none;margin:0;padding:0}
+.do-list li{border-top:1px solid var(--line)}
+.do-list li:last-child{border-bottom:1px solid var(--line)}
+.do-list a{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 4px;text-decoration:none;font-size:1.15rem;font-weight:500;transition:color .25s,padding .25s}
+.do-list a:hover{color:var(--blue);padding-left:12px}
+.do-list svg{flex:none;color:var(--blue)}
+.ind h3{font-size:.82rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--eyebrow);margin:0 0 18px}
+.ind .chips{gap:10px}
+.ind .chips li{background:var(--lav-2);padding:10px 16px;font-size:.95rem}
+.regions{margin-top:36px}
+
+/* Leadership */
+.team{background:var(--lav)}
+.t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.person{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.person .photo{aspect-ratio:4/3;background:linear-gradient(135deg,#C9D1F8,#8FA3F0);display:grid;place-items:center;color:#fff;font-size:2.2rem;font-weight:600}
+.person .photo img{width:100%;height:100%;object-fit:cover}
+.person .meta{display:flex;justify-content:space-between;align-items:center;padding:20px 22px}
+.person h3{font-size:1.15rem;letter-spacing:0}
+.person p{margin:4px 0 0;color:var(--muted);font-size:.92rem}
+.person a{display:grid;place-items:center;width:40px;height:40px;border-radius:6px;border:1px solid var(--line);color:var(--blue)}
+
+/* Voices marquee */
+.voices .marquee{background:none;padding:40px 0 0}
+.voices .track{animation-duration:70s;align-items:stretch}
+.quote{flex:none;width:400px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:28px;display:flex;flex-direction:column;margin:0}
+.quote .tag{align-self:flex-start}
+.quote blockquote{margin:16px 0 22px;font-size:1.08rem;line-height:1.55;color:var(--ink)}
+.quote figcaption{margin-top:auto;font-size:.9rem;color:var(--muted)}
+.quote figcaption b{display:block;color:var(--ink)}
+
+/* Presence + trust */
+.pr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.office-l{border:1px solid var(--line);border-radius:10px;padding:28px;background:#fff}
+.office-l .flag{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--eyebrow)}
+.office-l h3{font-size:1.3rem;margin:10px 0 10px}
+.office-l p{margin:0;color:var(--ink-2)}
+.trust{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:40px}
+.trust li{list-style:none;border:1px solid var(--line);border-radius:30px;padding:10px 20px;font-weight:600;font-size:.92rem;background:var(--lav)}
+.trust{padding:0}
+
+/* Reach out */
+.reach-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:48px 0 0;padding:0;list-style:none;counter-reset:s;text-align:left}
+.reach-steps li{background:rgba(255,255,255,.75);border-radius:10px;padding:26px;counter-increment:s}
+.reach-steps li::before{content:"0" counter(s);display:block;font-weight:700;color:var(--blue);margin-bottom:10px}
+.reach-steps b{display:block;font-size:1.1rem;margin-bottom:6px}
+.reach-steps span{color:var(--ink-2)}
+
+@media (max-width:1024px){.b-grid{grid-template-columns:1fr 1fr}.t-grid,.pr-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){
+  .story-grid,.do-grid,.reach-steps{grid-template-columns:1fr}
+  .b-grid,.t-grid,.pr-grid{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr 1fr}
+  .ph{height:180px}.ph.w1{width:250px}.ph.w2{width:200px}.ph.w3{width:300px}
+  .quote{width:300px}
+}
+@media (prefers-reduced-motion:reduce){.track{animation:none!important;flex-wrap:wrap;width:auto;justify-content:center}.track[aria-hidden]{display:none}}
+</style>
+</head>
+<body>
+
+<a class="sr-only" href="#main">Skip to content</a>
+
+<!-- HEADER -->
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="logo" href="#"><img src="data:image/png;base64,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" alt="Mako" width="168" height="36"></a>
+    <ul id="menu">
+      <li><a href="#">Solutions</a></li>
+      <li><a href="#">Mako Matrix™</a></li>
+      <li><a href="#">Industries</a></li>
+      <li><a href="#">Hire an FDE</a></li>
+      <li><a href="#" aria-current="page">About Us</a></li>
+      <li><a href="#">Resources</a></li>
+    </ul>
+    <a class="btn" href="#contact">Consult our Experts</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+      <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+</header>
+
+
+<main id="main">
+
+<!-- HERO -->
+<section class="about-hero">
+  <div class="wrap">
+    <p class="eyebrow">About Mako</p>
+    <h1><span>Big enough to deliver.</span><span class="accent">Close enough to care.</span></h1>
+    <p class="lead">Mako IT Lab is an engineering company from Chennai. We build software, data, cloud and AI systems for enterprises across India, the US, the UK and the Middle East.</p>
+    <div class="cta-row"><a class="btn" href="#contact">Work With Us</a><a class="link" href="#">Explore Careers</a></div>
+  </div>
+</section>
+
+<!-- MOVING PHOTOS -->
+<div class="marquee" aria-label="Life at Mako photos">
+    <div class="track">
+      <figure class="ph w1 "><!-- Replace with: <img src="your-photo.jpg" alt="Describe the photo"> --><figcaption>Team at work</figcaption></figure>
+      <figure class="ph w2 c2"><!-- Replace with: <img src="your-photo.jpg" alt="Describe the photo"> --><figcaption>Chennai delivery center</figcaption></figure>
+      <figure class="ph w3 c3"><!-- Replace with: <img src="your-photo.jpg" alt="Describe the photo"> --><figcaption>Client workshop</figcaption></figure>
+      <figure class="ph w2 c4"><!-- Replace with: <img src="your-photo.jpg" alt="Describe the photo"> --><figcaption>Hackathon</figcaption></figure>
+      <figure class="ph w1 c2"><!-- Replace with: <img src="your-photo.jpg" alt="Describe the photo"> --><figcaption>Team celebration</figcaption></figure>
+      <figure class="ph w3 "><!-- Replace with: <img src="your-photo.jpg" alt="Describe the photo"> --><figcaption>Office life</figcaption></figure>
+      <figure aria-hidden="true" class="ph w1 "><!-- Replace with: <img src="your-photo.jpg" alt="Describe the photo"> --><figcaption>Team at work</figcaption></figure>
+      <figure aria-hidden="true" class="ph w2 c2"><!-- Replace with: <img src="your-photo.jpg" alt="Describe the photo"> --><figcaption>Chennai delivery center</figcaption></figure>
+      <figure aria-hidden="true" class="ph w3 c3"><!-- Replace with: <img src="your-photo.jpg" alt="Describe the photo"> --><figcaption>Client workshop</figcaption></figure>
+      <figure aria-hidden="true" class="ph w2 c4"><!-- Replace with: <img src="your-photo.jpg" alt="Describe the photo"> --><figcaption>Hackathon</figcaption></figure>
+      <figure aria-hidden="true" class="ph w1 c2"><!-- Replace with: <img src="your-photo.jpg" alt="Describe the photo"> --><figcaption>Team celebration</figcaption></figure>
+      <figure aria-hidden="true" class="ph w3 "><!-- Replace with: <img src="your-photo.jpg" alt="Describe the photo"> --><figcaption>Office life</figcaption></figure>
+    </div>
+    <div class="track rev">
+      <figure class="ph w3 c4"><!-- Replace with: <img src="your-photo.jpg" alt="Describe the photo"> --><figcaption>Engineering huddle</figcaption></figure>
+      <figure class="ph w1 c3"><!-- Replace with: <img src="your-photo.jpg" alt="Describe the photo"> --><figcaption>Awards night</figcaption></figure>
+      <figure class="ph w2 "><!-- Replace with: <img src="your-photo.jpg" alt="Describe the photo"> --><figcaption>Learning session</figcaption></figure>
+      <figure class="ph w3 c2"><!-- Replace with: <img src="your-photo.jpg" alt="Describe the photo"> --><figcaption>Client visit</figcaption></figure>
+      <figure class="ph w2 c3"><!-- Replace with: <img src="your-photo.jpg" alt="Describe the photo"> --><figcaption>Team outing</figcaption></figure>
+      <figure class="ph w1 c4"><!-- Replace with: <img src="your-photo.jpg" alt="Describe the photo"> --><figcaption>Product demo</figcaption></figure>
+      <figure aria-hidden="true" class="ph w3 c4"><!-- Replace with: <img src="your-photo.jpg" alt="Describe the photo"> --><figcaption>Engineering huddle</figcaption></figure>
+      <figure aria-hidden="true" class="ph w1 c3"><!-- Replace with: <img src="your-photo.jpg" alt="Describe the photo"> --><figcaption>Awards night</figcaption></figure>
+      <figure aria-hidden="true" class="ph w2 "><!-- Replace with: <img src="your-photo.jpg" alt="Describe the photo"> --><figcaption>Learning session</figcaption></figure>
+      <figure aria-hidden="true" class="ph w3 c2"><!-- Replace with: <img src="your-photo.jpg" alt="Describe the photo"> --><figcaption>Client visit</figcaption></figure>
+      <figure aria-hidden="true" class="ph w2 c3"><!-- Replace with: <img src="your-photo.jpg" alt="Describe the photo"> --><figcaption>Team outing</figcaption></figure>
+      <figure aria-hidden="true" class="ph w1 c4"><!-- Replace with: <img src="your-photo.jpg" alt="Describe the photo"> --><figcaption>Product demo</figcaption></figure>
+    </div>
+</div>
+
+<!-- STORY -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Our story</p>
+    <div class="story-grid">
+      <h2>Started as a lab. <span class="accent">Still run like one.</span></h2>
+      <div>
+        <p class="hl">We test, we build, we keep what works. That habit is in our name and in every project we take on.</p>
+        <p>[Add founding year and the founders' story in two or three lines: why Mako started and the first problem it solved.]</p>
+        <p>Today our engineers work across product engineering, cloud and DevOps, QA, managed IT, data and AI. What ties it together is Mako Matrix™: the frameworks and accelerators we have built from real client work, so every new project starts ahead.</p>
+      </div>
+    </div>
+    <div class="facts">
+      <div class="fact"><b>130+</b><span>Mako team members</span></div>
+      <div class="fact"><b>3</b><span>Offices: US, India, UK</span></div>
+      <div class="fact"><b>4</b><span>Regions served</span></div>
+      <div class="fact"><b>[X]+</b><span>Clients served</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- BELIEFS -->
+<section class="beliefs">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow">What we believe</p>
+      <h2>Four habits <span class="accent">we don't compromise on.</span></h2>
+    </div>
+    <div class="b-grid">
+      <article class="belief"><span class="n">01</span><h3>Own the result</h3><p>We measure ourselves on what changed for you, not on hours logged or tickets closed.</p></article>
+      <article class="belief"><span class="n">02</span><h3>Context before code</h3><p>We learn how your business really runs before we decide what to build.</p></article>
+      <article class="belief"><span class="n">03</span><h3>Never start from zero</h3><p>Mako Matrix™ frameworks and accelerators carry what worked on one project into the next.</p></article>
+      <article class="belief"><span class="n">04</span><h3>Secure by default</h3><p>ISO-certified processes and privacy-first habits sit inside every build, not on top of it.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">What we do</p>
+    <h2>Five solution areas. <span class="accent">One engineering team.</span></h2>
+    <div class="do-grid">
+      <ul class="do-list">
+          <li><a href="#">AI-Native Digital Platforms<svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 11h14M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a></li>
+          <li><a href="#">Intelligent Data &amp; Enterprise Automation<svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 11h14M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a></li>
+          <li><a href="#">Autonomous Cloud &amp; Platform Engineering<svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 11h14M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a></li>
+          <li><a href="#">Enterprise AI Systems &amp; LLM Engineering<svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 11h14M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a></li>
+          <li><a href="#">AI Transformation &amp; Emerging Technology Advisory<svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 11h14M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a></li>
+      </ul>
+      <div class="ind">
+        <h3>Industries we serve</h3>
+        <ul class="chips">
+            <li>BFSI</li>
+            <li>Healthcare</li>
+            <li>Retail</li>
+            <li>Logistics</li>
+            <li>Technology &amp; SaaS</li>
+            <li>Education</li>
+            <li>Automobile</li>
+        </ul>
+        <div class="regions">
+          <h3>Where we work</h3>
+          <ul class="chips"><li>India</li><li>United States</li><li>United Kingdom</li><li>Middle East</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section class="team">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow">Leadership</p>
+      <h2>The people <span class="accent">behind Mako.</span></h2>
+      <p class="lead">Leaders who have written the code, run the delivery and answered to the client.</p>
+    </div>
+    <div class="t-grid">
+      <article class="person">
+        <div class="photo" aria-hidden="true">NS<!-- Replace with <img src="photo.jpg" alt=""> --></div>
+        <div class="meta"><div><h3>[Name Surname]</h3><p>[Founder &amp; CEO]</p></div><a href="#" aria-label="[Name Surname] on LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-4.9c0-1.17-.02-2.68-1.63-2.68-1.64 0-1.89 1.28-1.89 2.6V21h-4z"/></svg></a></div>
+      </article>
+      <article class="person">
+        <div class="photo" aria-hidden="true">NS<!-- Replace with <img src="photo.jpg" alt=""> --></div>
+        <div class="meta"><div><h3>[Name Surname]</h3><p>[Chief Technology Officer]</p></div><a href="#" aria-label="[Name Surname] on LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-4.9c0-1.17-.02-2.68-1.63-2.68-1.64 0-1.89 1.28-1.89 2.6V21h-4z"/></svg></a></div>
+      </article>
+      <article class="person">
+        <div class="photo" aria-hidden="true">NS<!-- Replace with <img src="photo.jpg" alt=""> --></div>
+        <div class="meta"><div><h3>[Name Surname]</h3><p>[Head of Delivery]</p></div><a href="#" aria-label="[Name Surname] on LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-4.9c0-1.17-.02-2.68-1.63-2.68-1.64 0-1.89 1.28-1.89 2.6V21h-4z"/></svg></a></div>
+      </article>
+      <article class="person">
+        <div class="photo" aria-hidden="true">NS<!-- Replace with <img src="photo.jpg" alt=""> --></div>
+        <div class="meta"><div><h3>[Name Surname]</h3><p>[Head of Sales]</p></div><a href="#" aria-label="[Name Surname] on LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-4.9c0-1.17-.02-2.68-1.63-2.68-1.64 0-1.89 1.28-1.89 2.6V21h-4z"/></svg></a></div>
+      </article>
+      <article class="person">
+        <div class="photo" aria-hidden="true">NS<!-- Replace with <img src="photo.jpg" alt=""> --></div>
+        <div class="meta"><div><h3>[Name Surname]</h3><p>[Head of AI &amp; Data]</p></div><a href="#" aria-label="[Name Surname] on LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-4.9c0-1.17-.02-2.68-1.63-2.68-1.64 0-1.89 1.28-1.89 2.6V21h-4z"/></svg></a></div>
+      </article>
+      <article class="person">
+        <div class="photo" aria-hidden="true">NS<!-- Replace with <img src="photo.jpg" alt=""> --></div>
+        <div class="meta"><div><h3>[Name Surname]</h3><p>[Head of People]</p></div><a href="#" aria-label="[Name Surname] on LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-4.9c0-1.17-.02-2.68-1.63-2.68-1.64 0-1.89 1.28-1.89 2.6V21h-4z"/></svg></a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- VOICES -->
+<section class="voices">
+  <div class="wrap center">
+    <p class="eyebrow">In their words</p>
+    <h2>Ask the people <span class="accent">who work with us.</span></h2>
+    <p class="lead">Clients, partners and our own team on what working with Mako is really like.</p>
+  </div>
+  <div class="marquee" aria-label="Testimonials">
+    <div class="track">
+      <figure class="quote"><span class="tag t-hi">Client</span><blockquote>[Add an approved client quote about outcomes Mako delivered.]</blockquote><figcaption><b>[Client name]</b>[Role, Company]</figcaption></figure>
+      <figure class="quote"><span class="tag t-ok">Employee</span><blockquote>[Add a quote from a long-serving Mako engineer about growing here.]</blockquote><figcaption><b>[Employee name]</b>[Role, years at Mako]</figcaption></figure>
+      <figure class="quote"><span class="tag t-md">Partner</span><blockquote>[Add a quote from a technology or channel partner.]</blockquote><figcaption><b>[Partner name]</b>[Role, Company]</figcaption></figure>
+      <figure class="quote"><span class="tag t-hi">Client</span><blockquote>[Add a second client quote, ideally from BFSI or healthcare.]</blockquote><figcaption><b>[Client name]</b>[Role, Company]</figcaption></figure>
+      <figure class="quote"><span class="tag t-ok">Employee</span><blockquote>[Add a quote from a recent joiner about learning and real projects.]</blockquote><figcaption><b>[Employee name]</b>[Role]</figcaption></figure>
+      <figure aria-hidden="true" class="quote"><span class="tag t-hi">Client</span><blockquote>[Add an approved client quote about outcomes Mako delivered.]</blockquote><figcaption><b>[Client name]</b>[Role, Company]</figcaption></figure>
+      <figure aria-hidden="true" class="quote"><span class="tag t-ok">Employee</span><blockquote>[Add a quote from a long-serving Mako engineer about growing here.]</blockquote><figcaption><b>[Employee name]</b>[Role, years at Mako]</figcaption></figure>
+      <figure aria-hidden="true" class="quote"><span class="tag t-md">Partner</span><blockquote>[Add a quote from a technology or channel partner.]</blockquote><figcaption><b>[Partner name]</b>[Role, Company]</figcaption></figure>
+      <figure aria-hidden="true" class="quote"><span class="tag t-hi">Client</span><blockquote>[Add a second client quote, ideally from BFSI or healthcare.]</blockquote><figcaption><b>[Client name]</b>[Role, Company]</figcaption></figure>
+      <figure aria-hidden="true" class="quote"><span class="tag t-ok">Employee</span><blockquote>[Add a quote from a recent joiner about learning and real projects.]</blockquote><figcaption><b>[Employee name]</b>[Role]</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- PRESENCE + TRUST -->
+<section class="beliefs">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow">Global presence</p>
+      <h2>Three offices. <span class="accent">One delivery standard.</span></h2>
+    </div>
+    <div class="pr-grid">
+      <article class="office-l"><span class="flag">Headquarters</span><h3>Delaware, USA</h3><p>Client partnership and leadership for North America.</p></article>
+      <article class="office-l"><span class="flag">Delivery center</span><h3>Chennai, India</h3><p>Where most of our engineering, QA and support teams build and run.</p></article>
+      <article class="office-l"><span class="flag">UK office</span><h3>Warwick, UK</h3><p>Close to our UK and European clients.</p></article>
+    </div>
+    <ul class="trust" aria-label="Certifications">
+      <li>ISO 27001 Certified</li><li>ISO 9001 Certified</li><li>AWS Certified Partner</li><li>Rated on Clutch</li>
+    </ul>
+  </div>
+</section>
+
+<!-- REACH OUT -->
+<section class="closing" id="contact">
+  <div class="wrap">
+    <p class="eyebrow">Work with us</p>
+    <h2>Tell us what's stuck.<span>We'll show you a way through.</span></h2>
+    <ol class="reach-steps">
+      <li><b>Share the problem</b><span>AI, software, data, cloud or a legacy system that won't move.</span></li>
+      <li><b>Talk to an engineer</b><span>We match you with someone who knows that kind of problem.</span></li>
+      <li><b>Leave with a plan</b><span>A workshop, a pilot or a build plan, whichever fits.</span></li>
+    </ol>
+    <div class="cta-row"><a class="btn" href="#">Consult our Experts</a></div>
+    <p class="small">30 minutes. No commitment. You'll leave with a clear next step either way.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <a class="logo" href="#"><img src="data:image/png;base64,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" alt="Mako" width="168" height="36"></a>
+        <p class="f-tag">Engineering intelligent platforms, enterprise AI systems, and transformation frameworks powered by Mako Matrix™.</p>
+        <div class="social">
+          <a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">X (Twitter)</a>
+        </div>
+      </div>
+      <div class="badges">
+        <span class="b">Clutch<br>Top Co.</span><span class="b">Clutch<br>Global</span><span class="b">Award</span>
+        <p>Recognitions from the familiar workspace</p>
+      </div>
+    </div>
+
+    <div class="offices">
+      <div class="office"><h3>Headquarters</h3><p>2093 Philadelphia Pike, #5611<br>Claymont, Delaware, USA<br>+1 302 415 3151</p></div>
+      <div class="office"><h3>Delivery Center</h3><p>TICEL Biopark, Phase II, 8th Floor,<br>Taramani, Chennai, Tamil Nadu, India<br>+91 44 4831 3332</p></div>
+      <div class="office"><h3>UK Office</h3><p>Innovation Centre, Warwick Technology Park,<br>Gallows Hill, Warwick, Warwickshire, UK<br>+44 7520 642494</p></div>
+    </div>
+
+    <div class="f-links">
+      <div>
+        <h3>Solutions</h3>
+        <ul>
+          <li><a href="#">AI-Native Digital Platforms</a></li>
+          <li><a href="#">Intelligent Data &amp; Enterprise Automation</a></li>
+          <li><a href="#">Autonomous Cloud &amp; Platform Engineering</a></li>
+          <li><a href="#">Enterprise AI Systems &amp; LLM Engineering</a></li>
+          <li><a href="#">AI Transformation &amp; Emerging Technology Advisory</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Mako Matrix™</h3>
+        <h4>Frameworks</h4>
+        <ul class="indent">
+          <li><a href="#">Matrix Forge™</a></li><li><a href="#">Matrix Flow™</a></li><li><a href="#">Matrix Ops™</a></li><li><a href="#">Matrix Intelligence™</a></li><li><a href="#">Matrix Edge™</a></li>
+        </ul>
+        <h4>Accelerators</h4>
+        <ul class="indent">
+          <li><a href="#">Migrate™</a></li><li><a href="#">FlowLink™</a></li><li><a href="#">APIGuard™</a></li><li><a href="#">SalesIQ™</a></li><li><a href="#">EdgeSense™</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Industries</h3>
+        <ul>
+          <li><a href="#">Logistics</a></li><li><a href="#">Healthcare</a></li><li><a href="#">Retail</a></li><li><a href="#">Technology &amp; SaaS</a></li><li><a href="#">Education</a></li><li><a href="#">Automobile</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Insights</a></li><li><a href="#">About</a></li><li><a href="#">Blog</a></li><li><a href="#">Case Studies</a></li><li><a href="#">Careers</a></li><li><a href="#">Contact</a></li>
+        </ul>
+        <a class="btn" href="#">Get Quote</a>
+      </div>
+    </div>
+
+    <div class="f-bottom">
+      <ul><li>© Mako IT Lab</li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Use</a></li></ul>
+      <ul><li>ISO 27001 Certified</li><li>ISO 9001 Certified</li><li>AWS Certified Partner</li><li>Rated on Clutch</li></ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var mBtn = document.querySelector('.menu-btn'), menu = document.getElementById('menu');
+  mBtn.addEventListener('click', function(){
+    var open = mBtn.getAttribute('aria-expanded') === 'true';
+    mBtn.setAttribute('aria-expanded', String(!open));
+    mBtn.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
+    menu.classList.toggle('open', !open);
+  });
+})();
+</script>
+</body>
+</html>
